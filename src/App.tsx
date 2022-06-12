@@ -1,5 +1,12 @@
+import { Layout } from "modules";
+import { Configurator } from "views/configurator";
+
 function App() {
-  return <div></div>;
+  return (
+    <Layout>
+      <Configurator />
+    </Layout>
+  );
 }
 
 export default App;
