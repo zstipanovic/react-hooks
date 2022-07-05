@@ -26,7 +26,7 @@ export const Example10: React.FC = () => {
       />
       <p>Count multiplied: {countMultiplied}</p>
       <div>
-        <button onClick={increment}>Increment</button>
+        <button onClick={() => increment(1)}>Increment</button>
         <button onClick={decrement}>Decrement</button>
         <button onClick={reset}>Reset</button>
       </div>

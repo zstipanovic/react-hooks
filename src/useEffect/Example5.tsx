@@ -7,7 +7,7 @@ export const Example5: React.FC = () => {
   useEffect(() => {
     console.log("USE EFFECT CALLED");
     document.title = `${count1} times`;
-  });
+  }, [count1]);
 
   return (
     <div>

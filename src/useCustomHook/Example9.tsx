@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useCounter } from "./useCounter";
 
 export const Example9: React.FC = () => {
-  const [count, setCount] = useState(0);
-
-  const [multiplyBy, setMultiplyBy] = useState(0);
-
-  const [countMultiplied, setCountMultiplied] = useState(0 * multiplyBy);
-
-  useEffect(() => {
-    setCountMultiplied(count * multiplyBy);
-  }, [count, multiplyBy]);
-
-  const reset = () => {
-    setCount(0);
-    setMultiplyBy(0);
-  };
-
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
+  const {
+    count,
+    multiplyBy,
+    countMultiplied,
+    increment,
+    decrement,
+    reset,
+    setMultiplyBy,
+  } = useCounter(5);
 
   return (
     <div>
@@ -33,7 +26,7 @@ export const Example9: React.FC = () => {
       />
       <p>Count multiplied: {countMultiplied}</p>
       <div>
-        <button onClick={increment}>Increment</button>
+        <button onClick={() => increment(5)}>Increment</button>
         <button onClick={decrement}>Decrement</button>
         <button onClick={reset}>Reset</button>
       </div>

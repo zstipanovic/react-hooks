@@ -10,6 +10,7 @@ export const Example3: React.FC = () => {
   const pizzaSizes: PizzaSize[] = ["S", "M", "L"];
 
   function onSelectSizeClick(size: PizzaSize) {
+    console.log("size", size);
     pizzaSize = size;
   }
 

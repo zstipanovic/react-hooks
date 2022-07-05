@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Todos from "./Todos";
 
 export const Example7: React.FC = () => {
@@ -8,9 +8,11 @@ export const Example7: React.FC = () => {
   const increment = () => {
     setCount((c) => c + 1);
   };
-  const addTodo = () => {
+
+  const addTodo = useCallback(() => {
     setTodos((t) => [...t, "New Todo"]);
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [todos]);
 
   return (
     <>

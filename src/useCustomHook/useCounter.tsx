@@ -12,7 +12,7 @@ export function useCounter(initialCount: number) {
     setCountMultiplied(count * multiplyBy);
   }, [count, multiplyBy]);
 
-  const increment = () => setCount(count + 1);
+  const increment = (value: number) => setCount(count + value);
   const decrement = () => setCount(count - 1);
   const reset = () => {
     setCount(initialCount);

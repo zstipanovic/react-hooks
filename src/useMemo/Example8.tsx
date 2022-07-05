@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 export const Example8: React.FC = () => {
   const [count, setCount] = useState(0);
@@ -13,7 +13,7 @@ export const Example8: React.FC = () => {
     return num;
   };
 
-  const calculation = expensiveCalculation(count);
+  const calculation = useMemo(() => expensiveCalculation(count), [count]);
 
   const increment = () => {
     setCount((c) => c + 1);

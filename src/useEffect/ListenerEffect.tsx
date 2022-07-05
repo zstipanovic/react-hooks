@@ -11,9 +11,9 @@ export const ListenerEffect: React.FC = () => {
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
 
-    /*  return () => {
+    return () => {
       window.removeEventListener("keydown", handleKeyDown);
-    }; */
+    };
   }, []);
 
   return (
