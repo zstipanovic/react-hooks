@@ -9,9 +9,7 @@ export const Example3: React.FC = () => {
 
   const pizzaSizes: PizzaSize[] = ["S", "M", "L"];
 
-  function onSelectSizeClick(e: React.MouseEvent<HTMLButtonElement>) {
-    const size = e.currentTarget.name as PizzaSize;
-
+  function onSelectSizeClick(size: PizzaSize) {
     pizzaSize = size;
   }
 
@@ -20,7 +18,7 @@ export const Example3: React.FC = () => {
       {pizzaSizes.map((size: PizzaSize) => (
         <button
           name={size}
-          onClick={onSelectSizeClick}
+          onClick={() => onSelectSizeClick(size)}
           css={[sizeButton, pizzaSize === size && activeButton]}
         >
           {size}
